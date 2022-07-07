@@ -1,10 +1,17 @@
+import { FormLogin, FormLoginProps } from '../../components/FormLogin';
+import { Heading } from '../../components/Heading';
+import { Wrapper } from '../../components/Wrapper';
 import * as Styled from './styles';
-import { CloneMe } from '../../components/CloneMe';
 
-export function Home() {
+export type HomeProps = FormLoginProps;
+
+export function Home({ onLogin }: HomeProps) {
   return (
     <Styled.Wrapper>
-      <CloneMe text="Clone me" />
+      <Wrapper>
+        <Heading size="huge">Pizzaria</Heading>
+        <FormLogin onLogin={onLogin} />
+      </Wrapper>
     </Styled.Wrapper>
   );
 }
